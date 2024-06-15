@@ -1,0 +1,31 @@
+
+##Baseline print all data to the terminal:
+
+From the build folder eg:
+~/wolfgang_libmotioncapture/libmotioncapture/build
+
+run (while in the USCDrone wifi)
+./motioncapture_example vicon  192.168.1.39
+
+
+## To send rigidbody trough UDP run the modified version
+./vicon_sender vicon 192.168.1.39
+
+then grab the UDP package and publish it with ROS2 with: 
+
+source ~/vicon_resend_ws/install/setup.bash
+ros2 run vicon_resend vicon_resend
+
+this will publish a odometry message to the topic /odometry
+to read the stream from a new terminal do:
+
+source /opt/ros/humble/setup.bash
+ros2 topic echo /odometry --field pose.pose
+
+
+
+
+
+
+
+

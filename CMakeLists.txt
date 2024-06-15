@@ -3,9 +3,9 @@ project(libmotioncapture)
 
 # define some options
 option(LIBMOTIONCAPTURE_BUILD_PYTHON_BINDINGS "Generate Python Bindings" ON)
-option(LIBMOTIONCAPTURE_ENABLE_QUALISYS "Enable Qualisys" ON)
-option(LIBMOTIONCAPTURE_ENABLE_OPTITRACK "Enable Optitrack" ON)
-option(LIBMOTIONCAPTURE_ENABLE_OPTITRACK_CLOSED_SOURCE "Enable Optitrack (Closed Source)" ON)
+option(LIBMOTIONCAPTURE_ENABLE_QUALISYS "Enable Qualisys" OFF)
+option(LIBMOTIONCAPTURE_ENABLE_OPTITRACK "Enable Optitrack" OFF)
+option(LIBMOTIONCAPTURE_ENABLE_OPTITRACK_CLOSED_SOURCE "Enable Optitrack (Closed Source)" OFF)
 option(LIBMOTIONCAPTURE_ENABLE_VICON "Enable Vicon" ON)
 option(LIBMOTIONCAPTURE_ENABLE_NOKOV "Enable Nokov" OFF)
 option(LIBMOTIONCAPTURE_ENABLE_VRPN "Enable VRPN" ON)
@@ -246,4 +246,11 @@ if (LIBMOTIONCAPTURE_BUILD_EXAMPLE)
   )
 
 endif()
+
+add_executable(vicon_sender
+    examples/vicon_sender.cpp
+  )
+target_link_libraries(vicon_sender
+  libmotioncapture
+)
 
