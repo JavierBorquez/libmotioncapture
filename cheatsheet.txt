@@ -1,3 +1,10 @@
+##After cloning:
+sudo apt install libboost-system-dev libboost-thread-dev libeigen3-dev ninja-build
+git submodule init
+git submodule update
+cd build
+cmake ..
+make
 
 ##Baseline print all data to the terminal:
 
