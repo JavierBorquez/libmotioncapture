@@ -2,7 +2,7 @@
 
 # libmotioncapture
 
-```
+
 
 For C++, follow the instructions below.
 
